@@ -1,0 +1,38 @@
+.logo {
+  width: 100%;
+  vertical-align: middle;
+}
+
+.navBarCenter ul {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding-inline-start: 0;
+}
+
+.navBarLinks {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  align-items: center;
+  padding-inline-start: 0;
+}
+
+.navBarLink {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5;
+}
+
+a.active {
+  font-weight: bold;
+}
+
+.navBarTools {
+  display: flex;
+  align-items: center;
+}

@@ -7,8 +7,13 @@ import Home from "./pages/home/Home";
 import Login from "./pages/login/Login";
 import Orders from "./pages/orders/Orders";
 import PlaceOrder from "./pages/placeOrder/PlaceOrder";
-import Product from "./pages/product/Product";
+import AirPods from "./pages/products/AirPods";
+import Ipad from "./pages/products/Ipad";
+import Iphone from "./pages/products/Iphone";
+import Mac from "./pages/products/Mac";
 import {Routes,Route} from 'react-router-dom'
+import Watch from "./pages/products/Watch";
+import Store from "./pages/store/Store";
 function App() {
   return (
       <div>
@@ -19,10 +24,15 @@ function App() {
           <Route path='/cart' element={<Cart/>} />
           <Route path='/collection' element={<Collection/>} />
           <Route path='/contact' element={<Contact/>} />
-          <Route path='/product' element={<Product/>} />
           <Route path='/orders' element={<Orders/>} />
           <Route path='/place-odrder' element={<PlaceOrder/>} />
           <Route path='/login' element={<Login/>} />
+          <Route path='/store' element={<Store/>} />
+          <Route path='/ipad' element={<Ipad/>} />
+          <Route path='/iphone' element={<Iphone/>} />
+          <Route path='/mac' element={<Mac/>} />
+          <Route path='/airpods' element={<AirPods/>} />
+          <Route path='/watch' element={<Watch/>} />
         </Routes>
       </div>
   )
