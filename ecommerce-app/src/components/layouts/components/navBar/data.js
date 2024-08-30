@@ -1,31 +1,24 @@
-const navData = [
+const navLinkData = [
   {
-    name: 'Mac',
-    path: '/mac',
+    name: 'HÀNG MỚI',
+    path: '/new-arrivals',
   },
   {
-    name: 'iPhone',
-    path: '/iphone',
+    name: 'Sản phẩm',
+    path: '/products',
   },
   {
-    name: 'iPad',
-    path: '/ipad',
+    name: 'Thương Hiệu',
+    path: '/brand-landing',
   },
   {
-    name: 'Airpods',
-    path: '/airpods',
+    name: 'Chương Trình Thành Viên',
+    path: '/membership',
   },
   {
-    name: 'Watch',
-    path: '/watch',
-  },
-  {
-    name: 'About',
-    path: '/about',
-  },
-  {
-    name: 'Contact',
-    path: '/contact',
+    name: 'Cẩm Nang',
+    path: '/blogs',
   },
 ];
-export default navData;
+
+export default navLinkData;

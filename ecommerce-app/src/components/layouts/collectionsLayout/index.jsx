@@ -1,9 +1,10 @@
 import React from 'react';
 import { Box } from '@mui/material';
+import SideBar from '../components/sideBar/SideBar';
 import NavBar from '../components/navBar/NavBar';
-import AccouncementBar from '../components/announcementBar/AnnouncementBar';
+import AnnouncementBar from '../components/announcementBar/AnnouncementBar';
 
-function DefaultLayout({ children }) {
+function CollectionsLayout({ children }) {
   return (
     <Box
       sx={{
@@ -13,7 +14,7 @@ function DefaultLayout({ children }) {
         alignItems: 'center',
       }}
     >
-      <AccouncementBar />
+      <AnnouncementBar />
       <NavBar />
       <Box
         classname='container'
@@ -22,10 +23,11 @@ function DefaultLayout({ children }) {
           alignItems: 'center',
         }}
       >
+        <SideBar />
         <Box classname='content'>{children}</Box>
       </Box>
     </Box>
   );
 }
 
-export default DefaultLayout;
+export default CollectionsLayout;

@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import { publicRoutes } from './routes';
-import { DefaultLayout } from './components/layouts';
+import { DefaultLayout, CollectionsLayout } from './components/layouts';
 import { Fragment } from 'react';
 function App() {
   return (
@@ -11,6 +11,8 @@ function App() {
           let Layout = DefaultLayout;
           if (route.layout === null) {
             Layout = Fragment;
+          } else if (route.layout === 'collection') {
+            Layout = CollectionsLayout;
           }
           return (
             <Route
