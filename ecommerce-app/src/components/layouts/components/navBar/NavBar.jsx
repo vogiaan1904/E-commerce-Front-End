@@ -15,8 +15,6 @@ import {
   ListItemText,
   Drawer,
   Link,
-  alpha,
-  InputBase,
   Button,
 } from '@mui/material';
 // import Badge from '@mui/material/Badge';
@@ -25,57 +23,56 @@ import {
 import Logout from '@mui/icons-material/Logout';
 import PersonAdd from '@mui/icons-material/PersonAdd';
 import Settings from '@mui/icons-material/Settings';
-import SearchIcon from '@mui/icons-material/Search';
 import PersonIcon from '@mui/icons-material/Person';
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 // import MenuIcon from '@mui/icons-material/Menu';
 import navLinkData from './data';
-import styled from '@emotion/styled';
+import SearchBar from '../../../../features/search/SearchBar';
 export default function NavBar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   // const handleClick = event => {
   //   setAnchorEl(event.currentTarget);
   // };
-  const Search = styled('div')(({ theme }) => ({
-    position: 'relative',
-    borderRadius: theme.shape.borderRadius,
-    backgroundColor: alpha(theme.palette.common.white, 0.15),
-    '&:hover': {
-      backgroundColor: alpha(theme.palette.common.white, 0.25),
-    },
-    marginRight: theme.spacing(2),
-    marginLeft: 0,
-    width: '100%',
-    [theme.breakpoints.up('sm')]: {
-      marginLeft: theme.spacing(3),
-      width: 'auto',
-    },
-  }));
+  // const Search = styled('div')(({ theme }) => ({
+  //   position: 'relative',
+  //   borderRadius: theme.shape.borderRadius,
+  //   backgroundColor: alpha(theme.palette.common.white, 0.15),
+  //   '&:hover': {
+  //     backgroundColor: alpha(theme.palette.common.white, 0.25),
+  //   },
+  //   marginRight: theme.spacing(2),
+  //   marginLeft: 0,
+  //   width: '100%',
+  //   [theme.breakpoints.up('sm')]: {
+  //     marginLeft: theme.spacing(3),
+  //     width: 'auto',
+  //   },
+  // }));
 
-  const SearchIconWrapper = styled('div')(({ theme }) => ({
-    padding: theme.spacing(0, 2),
-    height: '100%',
-    position: 'absolute',
-    pointerEvents: 'none',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  }));
+  // const SearchIconWrapper = styled('div')(({ theme }) => ({
+  //   padding: theme.spacing(0, 2),
+  //   height: '100%',
+  //   position: 'absolute',
+  //   pointerEvents: 'none',
+  //   display: 'flex',
+  //   alignItems: 'center',
+  //   justifyContent: 'center',
+  // }));
 
-  const StyledInputBase = styled(InputBase)(({ theme }) => ({
-    color: 'inherit',
-    '& .MuiInputBase-input': {
-      padding: theme.spacing(1, 1, 1, 0),
-      // vertical padding + font size from searchIcon
-      paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-      transition: theme.transitions.create('width'),
-      width: '100%',
-      [theme.breakpoints.up('md')]: {
-        width: '20ch',
-      },
-    },
-  }));
+  // const StyledInputBase = styled(InputBase)(({ theme }) => ({
+  //   color: 'inherit',
+  //   '& .MuiInputBase-input': {
+  //     padding: theme.spacing(1, 1, 1, 0),
+  //     // vertical padding + font size from searchIcon
+  //     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
+  //     transition: theme.transitions.create('width'),
+  //     width: '100%',
+  //     [theme.breakpoints.up('md')]: {
+  //       width: '20ch',
+  //     },
+  //   },
+  // }));
   const handleClose = () => {
     setAnchorEl(null);
   };
@@ -134,7 +131,6 @@ export default function NavBar() {
             herf='/'
             sx={{
               margin: '16px 0',
-              width: '100%',
             }}
           >
             <img
@@ -147,15 +143,7 @@ export default function NavBar() {
               width: '100%',
             }}
           >
-            <Search>
-              <SearchIconWrapper>
-                <SearchIcon />
-              </SearchIconWrapper>
-              <StyledInputBase
-                placeholder='Search…'
-                inputProps={{ 'aria-label': 'search' }}
-              />
-            </Search>
+            <SearchBar className='search-bar' />
           </Box>
           <Box
             className='headerIcons'
@@ -163,7 +151,19 @@ export default function NavBar() {
               width: '100%',
             }}
           >
-            <Button to='/' sx={{ padding: '15px 20px' }}>
+            <Link
+              href='/'
+              underline='none'
+              sx={{
+                minWidth: '64px',
+                padding: '15px 20px',
+                bgcolor: 'black',
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                borderRadius: '16px',
+              }}
+            >
               <PersonIcon />
               <Box
                 component={'p'}
@@ -180,8 +180,8 @@ export default function NavBar() {
               >
                 Đăng nhập
               </Box>
-            </Button>
-            <Button herf='/cart' sx={{ padding: '15px 20px' }}>
+            </Link>
+            <Button href='/cart' sx={{ padding: '15px 20px' }}>
               <ShoppingBagIcon />
               <Box
                 component={'p'}
